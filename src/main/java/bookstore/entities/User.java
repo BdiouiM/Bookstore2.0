@@ -1,7 +1,9 @@
 package bookstore.entities;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -9,6 +11,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -39,6 +42,9 @@ public class User  implements Serializable{
     private int CIN;
     @Enumerated(EnumType.STRING)
     private RoleUser role;
+    
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+    private Set<Reclamation> reclamation;
     
     public User(){
     	

@@ -9,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,6 +29,8 @@ public class Reclamation implements Serializable{
 	 private String Description;
 	@Column(name="C_ClientUsername")
 	 private String ClientUsername;
+	@ManyToOne
+    User utilisateur;
 	public Reclamation() {
 	}
 	public Reclamation(Long id, TypeReclamation type, String statutReclamation, String dateReclamation, String description,
