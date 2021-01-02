@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,14 +16,16 @@ import bookstore.exception.ReclamationException;
 import bookstore.service.ReclamationAdminService;
 import bookstore.service.ReclamationClientService;
 
-@RestController
 @RequestMapping("/reclamation")
+@RestController
 public class ReclamationController {
 	@Autowired
     private ReclamationClientService reclamationClientService;
 	@Autowired
     private ReclamationAdminService reclamationAdminService;
-	@RequestMapping("/reclamation-list")
+	@GetMapping("/reclamation-welcome")
+	public String start(){return "Weclome to reclamation";}
+	/*@RequestMapping("/reclamation-list")
     public List<Reclamation> Afficherreclamations() {
 		return reclamationAdminService.ListReclamations();
 	}
@@ -44,6 +47,6 @@ public class ReclamationController {
 			e.printStackTrace();
 		}
 		return  new ResponseEntity("reclamation annulée", HttpStatus.OK);
-	}
+	}*/
 	
 }

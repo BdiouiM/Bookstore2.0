@@ -5,11 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.function.Consumer;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
-
-import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +20,11 @@ import bookstore.repository.StockRepository;
 import bookstore.service.ReclamationAdminService;
 import bookstore.service.ReclamationClientService;
 import bookstore.service.StockService;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.hibernate.annotations.common.util.impl.LoggerFactory;
+
 @Service
 public class UserServiceImpl implements ReclamationAdminService,ReclamationClientService,StockService {
 
@@ -31,7 +32,7 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 	ReclamationRepository reclamationRepository;
 	@Autowired
 	StockRepository stockRepository;
-	private static final Logger L = (Logger) LogManager.getLogger(UserServiceImpl.class);
+	private static final Logger L = LogManager.getLogger(UserServiceImpl.class);
 	// GESTION RECLAMATION -MOHAMED BDIOUI-
     
 	@Override

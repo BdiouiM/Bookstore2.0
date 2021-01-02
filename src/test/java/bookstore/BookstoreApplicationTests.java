@@ -28,7 +28,7 @@ import bookstore.service.StockService;
 import bookstore.service.Impl.UserServiceImpl;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes={Reclamation.class,User.class,Livre.class})
+@SpringBootTest
 public class BookstoreApplicationTests {
 	@Autowired
 	ReclamationAdminService reclamationAdminService;
