@@ -9,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,7 +29,20 @@ public class Livre implements Serializable {
     private float prix;
 	 @Enumerated(EnumType.STRING)
 	private GenreLivre genre;
-	 public Livre(){
+	 @ManyToOne
+	    User utilisateur;
+	 
+	 public Livre(Long id, String titre, String auteur, int nbrPages, float prix, GenreLivre genre, User utilisateur) {
+		super();
+		this.id = id;
+		this.titre = titre;
+		this.auteur = auteur;
+		this.nbrPages = nbrPages;
+		this.prix = prix;
+		this.genre = genre;
+		this.utilisateur = utilisateur;
+	}
+	public Livre(){
 		 
 	 }
 	public Livre(Long id, String titre, String auteur, int nbrPages, float prix, GenreLivre genre) {

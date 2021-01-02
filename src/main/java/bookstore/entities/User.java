@@ -43,10 +43,30 @@ public class User  implements Serializable{
     @Enumerated(EnumType.STRING)
     private RoleUser role;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="user")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="utilisateur")
     private Set<Reclamation> reclamation;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="utilisateur")
+    private Set<Livre> livre;
     
-    public User(){
+    public User(Long id, String nom, String prenom, String adresse, String username, int tel, String password,
+			float salaire, String email, int cIN, RoleUser role, Set<Reclamation> reclamation, Set<Livre> livre) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.adresse = adresse;
+		this.username = username;
+		this.tel = tel;
+		this.password = password;
+		this.salaire = salaire;
+		this.email = email;
+		CIN = cIN;
+		this.role = role;
+		this.reclamation = reclamation;
+		this.livre = livre;
+	}
+
+	public User(){
     	
     }
     
