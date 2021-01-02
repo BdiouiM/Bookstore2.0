@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.function.Consumer;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +31,7 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 	ReclamationRepository reclamationRepository;
 	@Autowired
 	StockRepository stockRepository;
-	private static final Logger L = (Logger) LogManager.getLogger(UserServiceImpl.class);
+	private static final Logger L =  LogManager.getLogger(UserServiceImpl.class);
 	// GESTION RECLAMATION -MOHAMED BDIOUI-
     
 	@Override
