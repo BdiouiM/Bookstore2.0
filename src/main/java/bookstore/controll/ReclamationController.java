@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import bookstore.entities.Reclamation;
 import bookstore.exception.ReclamationException;
 import bookstore.service.ReclamationAdminService;
@@ -25,11 +24,13 @@ public class ReclamationController {
     private ReclamationAdminService reclamationAdminService;
 	@GetMapping("/reclamation-welcome")
 	public String start(){return "Weclome to reclamation";}
-	/*@RequestMapping("/reclamation-list")
-    public List<Reclamation> Afficherreclamations() {
-		return reclamationAdminService.ListReclamations();
+	
+	@RequestMapping("/reclamation-list")
+    public Iterable<Reclamation> getAll() {
+		
+		return reclamationAdminService.findAll();
 	}
-	 @RequestMapping(value = "/envoyer", method = RequestMethod.POST)
+	/* @RequestMapping(value = "/envoyer", method = RequestMethod.POST)
 	    public void envoyerReclamation(@RequestBody Reclamation r) {
 	         try {
 				reclamationClientService.envoyerReclamation(r);

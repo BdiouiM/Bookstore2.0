@@ -21,10 +21,7 @@ import bookstore.service.ReclamationAdminService;
 import bookstore.service.ReclamationClientService;
 import bookstore.service.StockService;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.hibernate.annotations.common.util.impl.LoggerFactory;
-
+import org.apache.logging.log4j.*;
 @Service
 public class UserServiceImpl implements ReclamationAdminService,ReclamationClientService,StockService {
 
@@ -34,11 +31,15 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 	StockRepository stockRepository;
 	private static final Logger L = LogManager.getLogger(UserServiceImpl.class);
 	// GESTION RECLAMATION -MOHAMED BDIOUI-
-    
+	@Override
+	public Iterable<Reclamation> findAll() {
+		return reclamationRepository.findAll();
+	}	
+
 	@Override
 	public boolean existeReclamation(Reclamation r) {
-		long idR = r.getId();
-		List<Reclamation> reclamation= reclamationRepository.afficherReclamationsSelonID(idR);
+		//long idR = r.getId();
+		List<Reclamation> reclamation= reclamationRepository.afficherReclamationsSelonID(r.getId());
 		if(reclamation.isEmpty())
 		return false;
 		else
@@ -156,8 +157,8 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 
 	@Override
 	public boolean existeLivre(Livre l) {
-		long idL = l.getId();
-		List<Livre> livres= stockRepository.afficherLivreSelonID(idL);
+		//long idL = l.getId();
+		List<Livre> livres= stockRepository.afficherLivreSelonID(l.getId());
 		if(livres.isEmpty())
 		return false;
 		else
@@ -202,6 +203,6 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 		for(Livre livre:livres){
 			L.info("Livre : "+livre);
 		}
-	}	
-
+	}
+	
 }

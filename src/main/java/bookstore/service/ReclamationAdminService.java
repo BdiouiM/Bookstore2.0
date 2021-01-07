@@ -14,4 +14,5 @@ public interface ReclamationAdminService {
      void AfficherReclamations(List<Reclamation> reclamations);
      Set<Reclamation> afficherReclamation(Reclamation r) throws ReclamationException;
      boolean existeReclamation(Reclamation r);
+     Iterable<Reclamation> findAll();
 }
