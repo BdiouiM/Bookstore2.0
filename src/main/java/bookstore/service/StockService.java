@@ -13,6 +13,6 @@ public interface StockService {
     int QuantiteLivres();
     void passerCommandeLivre(Livre l)throws Exception;
     List<Livre>  ListerLivres();
-    List<Livre>  afficherLivre(Livre l) throws StockException;
+    Livre  afficherLivre(Livre l) throws StockException;
     void AfficherLivres(List<Livre> livres);
 }

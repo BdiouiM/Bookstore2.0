@@ -1,69 +1,8 @@
-2021-01-17 18:28:16.085  INFO 3148 --- [main] bookstore.ReclamationTests               : Starting ReclamationTests using Java 1.8.0_111 on DESKTOP-P7427M3 with PID 3148 (started by ASUS in C:\Users\ASUS\Desktop\Bookstore2.0)
-2021-01-17 18:28:16.102  INFO 3148 --- [main] bookstore.ReclamationTests               : No active profile set, falling back to default profiles: default
-2021-01-17 18:28:17.920  INFO 3148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-17 18:28:18.430  INFO 3148 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 326 ms. Found 2 JPA repository interfaces.
-2021-01-17 18:28:21.223  INFO 3148 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-17 18:28:21.406  INFO 3148 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
-2021-01-17 18:28:21.756  INFO 3148 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-01-17 18:28:22.933  INFO 3148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-01-17 18:28:24.331  INFO 3148 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-01-17 18:28:24.368  INFO 3148 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-01-17 18:28:26.322  INFO 3148 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-17 18:28:26.390  INFO 3148 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-17 18:28:32.928  WARN 3148 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-17 18:28:46.255  INFO 3148 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-17 18:28:48.268  INFO 3148 --- [main] bookstore.ReclamationTests               : Started ReclamationTests in 32.948 seconds (JVM running for 34.844)
-2021-01-17 18:28:50.297  INFO 3148 --- [main] bookstore.service.Impl.UserServiceImpl   : reclamation +++ :bookstore.entities.Reclamation@9f2376f
-2021-01-17 18:28:50.298  INFO 3148 --- [main] bookstore.service.Impl.UserServiceImpl   : reclamation +++ :bookstore.entities.Reclamation@5d9bb69b
-2021-01-17 18:28:50.301  INFO 3148 --- [main] bookstore.service.Impl.UserServiceImpl   : reclamation +++ :bookstore.entities.Reclamation@71a2df1
-2021-01-17 18:28:50.302  INFO 3148 --- [main] bookstore.service.Impl.UserServiceImpl   : reclamation +++ :bookstore.entities.Reclamation@18faaff6
-2021-01-17 18:28:50.302  INFO 3148 --- [main] bookstore.service.Impl.UserServiceImpl   : reclamation : bookstore.entities.Reclamation@71a2df1
-2021-01-17 18:28:50.302  INFO 3148 --- [main] bookstore.service.Impl.UserServiceImpl   : reclamation : bookstore.entities.Reclamation@18faaff6
-2021-01-17 18:28:50.570  INFO 3148 --- [main] bookstore.service.Impl.UserServiceImpl   : reclamation envoyée
-2021-01-17 18:28:50.590  INFO 3148 --- [main] bookstore.service.Impl.UserServiceImpl   : reclamation +++ :bookstore.entities.Reclamation@44ddb518
-2021-01-17 18:28:50.590  INFO 3148 --- [main] bookstore.service.Impl.UserServiceImpl   : reclamation +++ :bookstore.entities.Reclamation@35536760
-2021-01-17 18:28:50.590  INFO 3148 --- [main] bookstore.service.Impl.UserServiceImpl   : reclamation +++ :bookstore.entities.Reclamation@1c8f71a7
-2021-01-17 18:28:50.687  INFO 3148 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-17 18:28:50.695  INFO 3148 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-17 18:28:50.703  INFO 3148 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-01-17 18:28:50.804  INFO 3148 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-01-17 18:32:33.785  INFO 9776 --- [main] bookstore.StockTests                     : Starting StockTests using Java 1.8.0_111 on DESKTOP-P7427M3 with PID 9776 (started by ASUS in C:\Users\ASUS\Desktop\Bookstore2.0)
-2021-01-17 18:32:33.788  INFO 9776 --- [main] bookstore.StockTests                     : No active profile set, falling back to default profiles: default
-2021-01-17 18:32:34.843  INFO 9776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-17 18:32:34.970  INFO 9776 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 2 JPA repository interfaces.
-2021-01-17 18:32:35.883  INFO 9776 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-17 18:32:35.976  INFO 9776 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
-2021-01-17 18:32:36.187  INFO 9776 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-01-17 18:32:36.818  INFO 9776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-01-17 18:32:37.251  INFO 9776 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-01-17 18:32:37.284  INFO 9776 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-01-17 18:32:38.621  INFO 9776 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-17 18:32:38.639  INFO 9776 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-17 18:32:39.870  WARN 9776 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-17 18:32:40.231  INFO 9776 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-17 18:32:40.879  INFO 9776 --- [main] bookstore.StockTests                     : Started StockTests in 7.599 seconds (JVM running for 9.15)
-2021-01-17 18:32:41.337  INFO 9776 --- [main] bookstore.service.Impl.UserServiceImpl   : veuillez passer une commande
-2021-01-17 18:32:41.649  INFO 9776 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-17 18:32:41.651  INFO 9776 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-17 18:32:41.654  INFO 9776 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-01-17 18:32:41.687  INFO 9776 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-01-17 19:23:07.723  INFO 5692 --- [main] bookstore.StockTests                     : Starting StockTests using Java 1.8.0_111 on DESKTOP-P7427M3 with PID 5692 (started by ASUS in C:\Users\ASUS\Desktop\Bookstore2.0)
-2021-01-17 19:23:07.747  INFO 5692 --- [main] bookstore.StockTests                     : No active profile set, falling back to default profiles: default
-2021-01-17 19:23:08.489  INFO 5692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-01-17 19:23:08.569  INFO 5692 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 2 JPA repository interfaces.
-2021-01-17 19:23:09.309  INFO 5692 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-01-17 19:23:09.388  INFO 5692 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
-2021-01-17 19:23:09.562  INFO 5692 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-01-17 19:23:09.931  INFO 5692 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-01-17 19:23:10.327  INFO 5692 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-01-17 19:23:10.362  INFO 5692 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-01-17 19:23:11.306  INFO 5692 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-01-17 19:23:11.315  INFO 5692 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-01-17 19:23:12.357  WARN 5692 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-01-17 19:23:12.691  INFO 5692 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2021-01-17 19:23:13.265  INFO 5692 --- [main] bookstore.StockTests                     : Started StockTests in 5.931 seconds (JVM running for 6.963)
-2021-01-17 19:23:13.687  INFO 5692 --- [main] bookstore.service.Impl.UserServiceImpl   : veuillez passer une commande
-2021-01-17 19:23:13.944  INFO 5692 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2021-01-17 19:23:13.947  INFO 5692 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-01-17 19:23:13.961  INFO 5692 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-01-17 19:23:14.008  INFO 5692 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-01-21 12:30:10.376  WARN 124 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15h17m17s994ms49µs900ns).
+2021-01-21 14:39:38.811  WARN 124 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h41m54s699ms4µs500ns).
+2021-01-21 16:06:15.492  WARN 124 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m6s493ms285µs200ns).
+2021-01-21 17:56:57.558  INFO 124 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-01-21 17:56:59.306  INFO 124 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-21 17:56:59.326  INFO 124 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-21 17:56:59.542  INFO 124 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-01-21 17:56:59.602  INFO 124 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

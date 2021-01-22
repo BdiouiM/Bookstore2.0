@@ -58,12 +58,12 @@ public class StockImpl implements StockService {
 		return livres;
 	}
 	@Override
-	public List<Livre> afficherLivre(Livre l) throws StockException {
+	public Livre afficherLivre(Livre l) throws StockException {
 		Optional<Livre> livreOpt=stockRepository.findById(l.getId());
 		Livre livre=livreOpt.get();
-		List<Livre> livreAffichage = new ArrayList<>();
-		livreAffichage.add(livre);
-		return livreAffichage;
+		/*List<Livre> livreAffichage = new ArrayList<>();
+		livreAffichage.add(livre);*/
+		return livre;
 	}
 	@Override
 	public void AfficherLivres(List<Livre> livres) {

@@ -147,10 +147,10 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 	}
 
 	@Override
-	public Set<Reclamation> afficherReclamation(Reclamation r) throws ReclamationException {
-		List<Reclamation> lreclamation=reclamationRepository.afficherReclamationsSelonID(r.getId());
-		Set<Reclamation> Sreclamation=lreclamation.stream().collect(Collectors.toSet());
-		return Sreclamation;
+	public Reclamation afficherReclamation(Long idr)  {
+		Optional<Reclamation> rOpt=reclamationRepository.findById(idr);
+		Reclamation r=rOpt.get();
+		return r;
 	}
 	
 	// GESTION STOCK -MOHAMED BDIOUI-
@@ -190,12 +190,10 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 		return livres;
 	}
 	@Override
-	public List<Livre> afficherLivre(Livre l) throws StockException {
+	public Livre afficherLivre(Livre l) throws StockException {
 		Optional<Livre> livreOpt=stockRepository.findById(l.getId());
 		Livre livre=livreOpt.get();
-		List<Livre> livreAffichage = new ArrayList<>();
-		livreAffichage.add(livre);
-		return livreAffichage;
+		return livre;
 	}
 	@Override
 	public void AfficherLivres(List<Livre> livres) {

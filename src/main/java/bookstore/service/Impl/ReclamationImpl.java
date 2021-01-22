@@ -2,6 +2,7 @@ package bookstore.service.Impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -122,7 +123,9 @@ public class ReclamationImpl implements ReclamationAdminService,ReclamationClien
 
 		@Override
 		public boolean TraiterReclamation(Reclamation r) throws ReclamationException {
-			return annulerReclamation(r)||validerReclamations(r);
+			return(r.getStatutReclamation().equals(StatutReclamation.VALIDEE)||
+					r.getStatutReclamation().equals(StatutReclamation.ANNULEE));
+			
 			}
 			
 
@@ -141,10 +144,10 @@ public class ReclamationImpl implements ReclamationAdminService,ReclamationClien
 		}
 
 		@Override
-		public Set<Reclamation> afficherReclamation(Reclamation r) throws ReclamationException {
-			List<Reclamation> lreclamation=reclamationRepository.afficherReclamationsSelonID(r.getId());
-			Set<Reclamation> Sreclamation=lreclamation.stream().collect(Collectors.toSet());
-			return Sreclamation;
+		public Reclamation afficherReclamation(Long idr)  {
+			Optional<Reclamation> rOpt=reclamationRepository.findById(idr);
+			Reclamation r=rOpt.get();
+			return r;
 		}
 		
 }

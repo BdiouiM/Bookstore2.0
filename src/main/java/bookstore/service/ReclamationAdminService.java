@@ -12,7 +12,7 @@ public interface ReclamationAdminService {
      boolean TraiterReclamation(Reclamation r) throws ReclamationException ;
      int NombreReclamations();
      void AfficherReclamations(List<Reclamation> reclamations);
-     Set<Reclamation> afficherReclamation(Reclamation r) throws ReclamationException;
+     Reclamation afficherReclamation(Long idr);
      boolean existeReclamation(Reclamation r);
      Iterable<Reclamation> findAll();
 }
