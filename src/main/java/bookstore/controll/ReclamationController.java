@@ -122,7 +122,9 @@ public class ReclamationController {
 	@GetMapping("/reclamation-reclamationAdmin/{admin-id}")
 	@ResponseBody
 	public Reclamation afficherReclamationAdmin(@PathVariable("admin-id") Long idr){
-		return reclamationAdminService.afficherReclamation(idr);
+		Reclamation r=new Reclamation();
+		r.setId(idr);
+		return reclamationAdminService.afficherReclamation(r);
 	}
 	//existe reclamation
 	@GetMapping("/reclamation-existeAdmin")

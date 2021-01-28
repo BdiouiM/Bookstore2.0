@@ -73,7 +73,7 @@ public class ReclamationTests {
 	    	reclamations=reclamationAdminService.ListReclamations();
 	    	reclamationAdminService.AfficherReclamations(reclamations);
 	    }
-	    @Test
+	   /* @Test
 	   	public void testAfficherReclamation() throws ParseException {
 	       	Reclamation r=new Reclamation();
 	       	try {
@@ -84,7 +84,7 @@ public class ReclamationTests {
 				e.printStackTrace();
 				//((org.apache.logging.log4j.Logger) L).debug("error afficher reclamation");
 			}
-	       }
+	       }*/
 	    @Test
 	   	public void testExisteReclamation() throws ParseException {
 	    	Reclamation r= new Reclamation();

@@ -146,12 +146,12 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 		}
 	}
 
-	@Override
+	/*@Override
 	public Reclamation afficherReclamation(Long idr)  {
 		Optional<Reclamation> rOpt=reclamationRepository.findById(idr);
 		Reclamation r=rOpt.get();
 		return r;
-	}
+	}*/
 	
 	// GESTION STOCK -MOHAMED BDIOUI-
 
@@ -201,6 +201,12 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 		for(Livre livre:livres){
 			L.info("Livre : "+livre);
 		}
+	}
+
+	@Override
+	public Reclamation afficherReclamation(Reclamation r) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

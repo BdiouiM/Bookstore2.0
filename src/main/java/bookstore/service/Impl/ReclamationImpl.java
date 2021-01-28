@@ -144,8 +144,8 @@ public class ReclamationImpl implements ReclamationAdminService,ReclamationClien
 		}
 
 		@Override
-		public Reclamation afficherReclamation(Long idr)  {
-			Optional<Reclamation> rOpt=reclamationRepository.findById(idr);
+		public Reclamation afficherReclamation(Reclamation rec)  {
+			Optional<Reclamation> rOpt=reclamationRepository.findById(rec.getId());
 			Reclamation r=rOpt.get();
 			return r;
 		}
