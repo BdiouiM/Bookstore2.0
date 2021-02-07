@@ -16,9 +16,10 @@
 	<properties>
 		<java.version>8</java.version>
         <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version> 
+         <stripe.version>1.1.16</stripe.version>
 	</properties>
 
-	<dependencies>
+<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -33,7 +34,22 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
 		<dependency>
+<<<<<<< HEAD
+=======
+	<groupId>io.jsonwebtoken</groupId>
+	<artifactId>jjwt</artifactId>
+	<version>0.9.1</version>
+</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+
+		<dependency>
+>>>>>>> develop
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -45,12 +61,48 @@
   </dependency>
   
 		<dependency>
+<<<<<<< HEAD
    			 <groupId>junit</groupId>
     		<artifactId>junit</artifactId>
     		<version>4.12</version>
     		<scope>test</scope>
   		</dependency>
   		
+=======
+         <groupId>com.stripe</groupId>
+         <artifactId>stripe-java</artifactId>
+         <version>1.1.16</version>
+      </dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+>>>>>>> develop
 	</dependencies>
 
 	<build>

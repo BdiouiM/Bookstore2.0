@@ -28,17 +28,13 @@ public class StockImpl implements StockService {
 	public boolean existeLivre(Livre l) {
 		//long idL = l.getId();
 		List<Livre> livres= stockRepository.afficherLivreSelonID(l.getId());
-		if(livres.isEmpty())
-		return false;
-		else
-	    return true;
+		return(!livres.isEmpty());
+		
 	}
 	@Override
 	public int QuantiteLivre(Livre l) throws StockException {
-		if(!existeLivre(l)){
-			throw (new StockException("Livre n'existe pas"));
-		}
-		return stockRepository.nombreLivreSelonTitreEtAuteur(l.getAuteur(), l.getTitre());
+	
+		return stockRepository.nombreLivreSelonTitre(l.getTitre());
 	}
 	@Override
 	public int QuantiteLivres() {

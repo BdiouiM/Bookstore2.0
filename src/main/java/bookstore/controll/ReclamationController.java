@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import bookstore.entities.Reclamation;
 import bookstore.entities.TypeReclamation;
 import bookstore.exception.ReclamationException;
@@ -27,8 +28,13 @@ import bookstore.service.Impl.ReclamationImpl;
 @RequestMapping("/reclamation")
 @RestController
 public class ReclamationController {
+	
 	@Autowired
     private ReclamationImpl reclamationService;
+<<<<<<< HEAD
+=======
+	
+>>>>>>> develop
 	@GetMapping("/reclamation-welcome")
 	public String start(){return "Weclome to reclamation";}
 	// RECLAMATION CLIENT
@@ -62,12 +68,17 @@ public class ReclamationController {
 		return  new ResponseEntity("error delete", HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	//modifier reclamation
-	@PutMapping("/reclamation-update/{user-date}/{user-desc}/{user-type}")
+	@PutMapping("/reclamation-update/{user-desc}/{user-type}")
 	@ResponseBody
-	public ResponseEntity<String> modifierReclamation(@RequestBody Reclamation r,@PathVariable("user-date") Date date,
-			@PathVariable("user-desc") String  description,@PathVariable("user-type") TypeReclamation  type){
+	public ResponseEntity<String> modifierReclamation(@RequestBody Reclamation r,
+			@PathVariable("user-desc") String  description,
+			@PathVariable("user-type") TypeReclamation  type){
 		try {
+<<<<<<< HEAD
 			reclamationService.modifierReclamation(r, date, description, type);
+=======
+			reclamationService.modifierReclamation(r, new Date(), description, type);
+>>>>>>> develop
 	            return  new ResponseEntity("reclamation modifiée", HttpStatus.OK);
 		} catch (ReclamationException e) {
 			e.printStackTrace();

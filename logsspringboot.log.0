@@ -1,0 +1,3 @@
+[2021-02-07 21:58:17.758] - 9048 INFOS [restartedMain] --- org.apache.catalina.core.StandardService: Starting service [Tomcat]
+[2021-02-07 21:58:17.762] - 9048 INFOS [restartedMain] --- org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.41]
+[2021-02-07 21:58:17.880] - 9048 INFOS [restartedMain] --- org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/SpringMVC]: Initializing Spring embedded WebApplicationContext
