@@ -15,8 +15,8 @@ public interface StockRepository extends JpaRepository<Livre, Long>{
 	//sans JPQL
     @Query(value="SELECT * FROM T_Livre l WHERE l.id=:id ", nativeQuery = true)
 	List<Livre> afficherLivreSelonID(@Param("id") Long id);
-    @Query(value="SELECT count(*) FROM T_Livre l WHERE l.c_auteur=:auteur AND l.c_titre=:titre", nativeQuery = true)
-   	int nombreLivreSelonTitreEtAuteur(@Param("auteur")String auteur,@Param("titre")String titre);
+    @Query("SELECT count(*) FROM Livre l WHERE l.titre=:titre")
+   	int nombreLivreSelonTitre(@Param("titre")String titre);
     @Query(value="SELECT count(*) FROM T_Livre", nativeQuery = true)
    	int nombreLivres();
 }

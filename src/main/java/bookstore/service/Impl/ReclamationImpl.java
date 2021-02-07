@@ -36,11 +36,8 @@ public class ReclamationImpl implements ReclamationAdminService,ReclamationClien
 		@Override
 		public boolean existeReclamation(Reclamation r) {
 			//long idR = r.getId();
-			List<Reclamation> reclamation= reclamationRepository.afficherReclamationsSelonID(r.getId());
-			if(reclamation.isEmpty())
-			return false;
-			else
-		    return true;
+			Reclamation reclamation= reclamationRepository.afficherReclamationsSelonID(r.getId());
+			return reclamation!=null;
 		}
 		@Override
 		public void envoyerReclamation(Reclamation r) throws ReclamationException {
@@ -54,18 +51,17 @@ public class ReclamationImpl implements ReclamationAdminService,ReclamationClien
 
 		@Override
 		public void modifierReclamation(Reclamation r,Date date,String description,TypeReclamation type) throws ReclamationException {
-			if(!existeReclamation(r))
+			/*if(!existeReclamation(r))
 				throw (new ReclamationException("reclamation n'existe pas"));
 			else
-			{
+			{*/
 				long idR=r.getId();
 				r.setType(type);
 				r.setDescription(description);
 				r.setDateReclamation(date);
-				r=reclamationRepository.modifierReclamation(idR, r.getDateReclamation(), r.getDescription(), r.getType());
 				reclamationRepository.save(r);
 				L.info("reclamation modifiée");
-			}
+			//}
 		}
 		
 		@Override

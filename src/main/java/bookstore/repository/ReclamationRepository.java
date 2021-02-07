@@ -16,9 +16,9 @@ public interface ReclamationRepository extends JpaRepository<Reclamation, Long>{
 	//sans JPQL
 	@Query(value="SELECT * FROM T_Reclamation r WHERE r.statut_reclamation=:statutReclamation ", nativeQuery = true)
 	List<Reclamation> afficherReclamationsSelonStatut(@Param("statutReclamation") StatutReclamation statutReclamation);
-	//sans JPQL
-     @Query(value="SELECT * FROM T_Reclamation r WHERE r.id=:id ", nativeQuery = true)
-	List<Reclamation> afficherReclamationsSelonID(@Param("id") Long id);
+	
+     @Query("SELECT r FROM Reclamation r WHERE r.id=:id ")
+	Reclamation afficherReclamationsSelonID(@Param("id") Long id);
    //avec JPQL
      @Query("UPDATE Reclamation r SET r.statutReclamation=:statut WHERE r.id=:id ")
  	Reclamation changerReclamationSelonStatut(@Param("statut") StatutReclamation statut,@Param("id") Long id);
