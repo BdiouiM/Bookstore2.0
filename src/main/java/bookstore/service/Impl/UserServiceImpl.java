@@ -5,11 +5,15 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+<<<<<<< HEAD
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+=======
+import java.util.stream.Collectors;
+>>>>>>> develop
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +28,8 @@ import bookstore.repository.StockRepository;
 import bookstore.service.ReclamationAdminService;
 import bookstore.service.ReclamationClientService;
 import bookstore.service.StockService;
+
+import org.apache.logging.log4j.*;
 @Service
 public class UserServiceImpl implements ReclamationAdminService,ReclamationClientService,StockService {
 
@@ -31,13 +37,21 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 	ReclamationRepository reclamationRepository;
 	@Autowired
 	StockRepository stockRepository;
+<<<<<<< HEAD
 	private static final Logger L =  LogManager.getLogger(UserServiceImpl.class);
+=======
+	private static final Logger L = LogManager.getLogger(UserServiceImpl.class);
+>>>>>>> develop
 	// GESTION RECLAMATION -MOHAMED BDIOUI-
-    
+	@Override
+	public Iterable<Reclamation> findAll() {
+		return reclamationRepository.findAll();
+	}	
+
 	@Override
 	public boolean existeReclamation(Reclamation r) {
-		long idR = r.getId();
-		List<Reclamation> reclamation= reclamationRepository.afficherReclamationsSelonID(idR);
+		//long idR = r.getId();
+		List<Reclamation> reclamation= reclamationRepository.afficherReclamationsSelonID(r.getId());
 		if(reclamation.isEmpty())
 		return false;
 		else
@@ -144,19 +158,19 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 		}
 	}
 
-	@Override
-	public Set<Reclamation> afficherReclamation(Reclamation r) throws ReclamationException {
-		List<Reclamation> lreclamation=reclamationRepository.afficherReclamationsSelonID(r.getId());
-		Set<Reclamation> Sreclamation=lreclamation.stream().collect(Collectors.toSet());
-		return Sreclamation;
-	}
+	/*@Override
+	public Reclamation afficherReclamation(Long idr)  {
+		Optional<Reclamation> rOpt=reclamationRepository.findById(idr);
+		Reclamation r=rOpt.get();
+		return r;
+	}*/
 	
 	// GESTION STOCK -MOHAMED BDIOUI-
 
 	@Override
 	public boolean existeLivre(Livre l) {
-		long idL = l.getId();
-		List<Livre> livres= stockRepository.afficherLivreSelonID(idL);
+		//long idL = l.getId();
+		List<Livre> livres= stockRepository.afficherLivreSelonID(l.getId());
 		if(livres.isEmpty())
 		return false;
 		else
@@ -188,12 +202,10 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 		return livres;
 	}
 	@Override
-	public List<Livre> afficherLivre(Livre l) throws StockException {
+	public Livre afficherLivre(Livre l) throws StockException {
 		Optional<Livre> livreOpt=stockRepository.findById(l.getId());
 		Livre livre=livreOpt.get();
-		List<Livre> livreAffichage = new ArrayList<>();
-		livreAffichage.add(livre);
-		return livreAffichage;
+		return livre;
 	}
 	@Override
 	public void AfficherLivres(List<Livre> livres) {
@@ -201,6 +213,12 @@ public class UserServiceImpl implements ReclamationAdminService,ReclamationClien
 		for(Livre livre:livres){
 			L.info("Livre : "+livre);
 		}
-	}	
+	}
 
+	@Override
+	public Reclamation afficherReclamation(Reclamation r) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

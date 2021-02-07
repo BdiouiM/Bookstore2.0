@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2021-01-16 09:19:02.574  INFO 7428 --- [main] bookstore.BookstoreApplication           : Starting BookstoreApplication using Java 1.8.0_111 on DESKTOP-P7427M3 with PID 7428 (C:\Users\ASUS\Desktop\Bookstore2.0\target\classes started by ASUS in C:\Users\ASUS\Desktop\Bookstore2.0)
 2021-01-16 09:19:02.582  INFO 7428 --- [main] bookstore.BookstoreApplication           : No active profile set, falling back to default profiles: default
 2021-01-16 09:19:03.936  INFO 7428 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
@@ -48,3 +49,13 @@
 2021-01-16 09:24:47.990  INFO 11600 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-01-16 09:24:48.011  INFO 11600 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2021-01-16 09:24:48.250  INFO 11600 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+=======
+2021-01-21 12:30:10.376  WARN 124 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15h17m17s994ms49µs900ns).
+2021-01-21 14:39:38.811  WARN 124 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h41m54s699ms4µs500ns).
+2021-01-21 16:06:15.492  WARN 124 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=12m6s493ms285µs200ns).
+2021-01-21 17:56:57.558  INFO 124 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-01-21 17:56:59.306  INFO 124 --- [RMI TCP Connection(2)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-21 17:56:59.326  INFO 124 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-21 17:56:59.542  INFO 124 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-01-21 17:56:59.602  INFO 124 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+>>>>>>> develop
