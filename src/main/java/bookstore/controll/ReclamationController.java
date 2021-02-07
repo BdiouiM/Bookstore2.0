@@ -22,28 +22,27 @@ import bookstore.entities.TypeReclamation;
 import bookstore.exception.ReclamationException;
 import bookstore.service.ReclamationAdminService;
 import bookstore.service.ReclamationClientService;
+import bookstore.service.Impl.ReclamationImpl;
 
 @RequestMapping("/reclamation")
 @RestController
 public class ReclamationController {
 	@Autowired
-    private ReclamationClientService reclamationClientService;
-	@Autowired
-    private ReclamationAdminService reclamationAdminService;
+    private ReclamationImpl reclamationService;
 	@GetMapping("/reclamation-welcome")
 	public String start(){return "Weclome to reclamation";}
 	// RECLAMATION CLIENT
 	@GetMapping("/reclamation-list")
     public Iterable<Reclamation> getAll() {
 		
-		return reclamationAdminService.findAll();
+		return reclamationService.findAll();
 	}
 	//ajouter reclamation
 	@PostMapping("/reclamation-add")
 	@ResponseBody
 	    public  ResponseEntity<String> envoyerReclamation(@RequestBody Reclamation r) {
 	         try {
-				 reclamationClientService.envoyerReclamation(r);
+	        	 reclamationService.envoyerReclamation(r);
 				 return  new ResponseEntity("reclamation envoyée", HttpStatus.OK);
 			} catch (ReclamationException e) {
 				e.printStackTrace();
@@ -55,7 +54,7 @@ public class ReclamationController {
 	@ResponseBody
 	public ResponseEntity<String> annulerReclamation(@RequestBody Reclamation r){
 		try {
-	            reclamationClientService.annulerReclamationsClient(r);
+			reclamationService.annulerReclamationsClient(r);
 	            return  new ResponseEntity("reclamation annulée", HttpStatus.OK);
 		} catch (ReclamationException e) {
 			e.printStackTrace();
@@ -68,7 +67,7 @@ public class ReclamationController {
 	public ResponseEntity<String> modifierReclamation(@RequestBody Reclamation r,@PathVariable("user-date") Date date,
 			@PathVariable("user-desc") String  description,@PathVariable("user-type") TypeReclamation  type){
 		try {
-	            reclamationClientService.modifierReclamation(r, date, description, type);
+			reclamationService.modifierReclamation(r, date, description, type);
 	            return  new ResponseEntity("reclamation modifiée", HttpStatus.OK);
 		} catch (ReclamationException e) {
 			e.printStackTrace();
@@ -78,7 +77,7 @@ public class ReclamationController {
 	@GetMapping("/reclamation-existe")
 	@ResponseBody
     public ResponseEntity<String> existeReclamation(@RequestBody Reclamation r) {
-		if(reclamationClientService.existeReclamation(r))
+		if(reclamationService.existeReclamation(r))
 			return  new ResponseEntity("reclamation existe", HttpStatus.OK);
 		return  new ResponseEntity("error existe", HttpStatus.INTERNAL_SERVER_ERROR);
 	}
@@ -87,13 +86,13 @@ public class ReclamationController {
 	//RECLAMATION ADMIN
 	@GetMapping("/reclamation-listAdmin")
     public Iterable<Reclamation> listReclamations() {	
-		return reclamationAdminService.ListReclamations();
+		return reclamationService.ListReclamations();
 	}
 	//annuler reclamation
 	@PostMapping("/reclamation-annulerAdmin")
 	@ResponseBody
 	    public  ResponseEntity<String> annulerReclamationAdmin(@RequestBody Reclamation r) throws ReclamationException {
-	         if(reclamationAdminService.annulerReclamation(r))
+	         if(reclamationService.annulerReclamation(r))
 	        	 return  new ResponseEntity<String>("reclamation annulée", HttpStatus.OK);
 	         return  new ResponseEntity<String>("error annuler admin", HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
@@ -101,7 +100,7 @@ public class ReclamationController {
 	@PostMapping("/reclamation-validerAdmin")
 	@ResponseBody
 	    public  ResponseEntity<String> validerReclamationAdmin(@RequestBody Reclamation r) throws ReclamationException {
-	         if(reclamationAdminService.validerReclamations(r))
+	         if(reclamationService.validerReclamations(r))
 	        	 return  new ResponseEntity<String>("reclamation validée", HttpStatus.OK);
 	         return  new ResponseEntity<String>("error valider admin", HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
@@ -109,14 +108,14 @@ public class ReclamationController {
 	@GetMapping("/reclamation-traiterAdmin")
 	@ResponseBody
     public ResponseEntity<String>  traiterReclamationAdmin(@RequestBody Reclamation r) throws ReclamationException {	
-		  if(reclamationAdminService.TraiterReclamation(r))
+		  if(reclamationService.TraiterReclamation(r))
 	        	 return  new ResponseEntity<String>("reclamation traitée", HttpStatus.OK);
 	         return  new ResponseEntity<String>("error traiter admin", HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	//nbr reclamations
 	@GetMapping("/reclamation-nbrRAdmin")
 	public int nombreReclamations(){
-		return reclamationAdminService.NombreReclamations();
+		return reclamationService.NombreReclamations();
 	}
 	//afficher reclamation
 	@GetMapping("/reclamation-reclamationAdmin/{admin-id}")
@@ -124,13 +123,13 @@ public class ReclamationController {
 	public Reclamation afficherReclamationAdmin(@PathVariable("admin-id") Long idr){
 		Reclamation r=new Reclamation();
 		r.setId(idr);
-		return reclamationAdminService.afficherReclamation(r);
+		return reclamationService.afficherReclamation(r);
 	}
 	//existe reclamation
 	@GetMapping("/reclamation-existeAdmin")
 	@ResponseBody
     public ResponseEntity<String> existeReclamationAdmin(@RequestBody Reclamation r) {
-		if(reclamationAdminService.existeReclamation(r))
+		if(reclamationService.existeReclamation(r))
 			return  new ResponseEntity("reclamation existe", HttpStatus.OK);
 		return  new ResponseEntity("error existe", HttpStatus.INTERNAL_SERVER_ERROR);
 	}

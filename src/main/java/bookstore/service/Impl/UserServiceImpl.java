@@ -5,15 +5,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-<<<<<<< HEAD
+
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-=======
 import java.util.stream.Collectors;
->>>>>>> develop
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
