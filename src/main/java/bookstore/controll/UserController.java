@@ -8,8 +8,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-	@GetMapping("/secured/all")
-	public String securedAuth(){
-		return "auth suceeded";
-	}
+	
 }

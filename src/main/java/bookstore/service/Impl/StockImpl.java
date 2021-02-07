@@ -7,12 +7,13 @@ import java.util.Optional;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import bookstore.entities.Livre;
 import bookstore.exception.StockException;
 import bookstore.repository.StockRepository;
 import bookstore.service.StockService;
-
+@Service
 public class StockImpl implements StockService {
 	@Autowired
 	StockRepository stockRepository;

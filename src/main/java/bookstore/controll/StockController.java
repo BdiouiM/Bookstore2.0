@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 import bookstore.entities.Livre;
 import bookstore.exception.StockException;
 import bookstore.service.StockService;
+import bookstore.service.Impl.StockImpl;
 
 @RequestMapping("/stock")
 @RestController
 public class StockController {
 	@Autowired
-    private StockService stockService;
+    private StockImpl stockService;
 	@GetMapping("/stock-welcome")
 	public String start(){
 		return "Weclome to stock";

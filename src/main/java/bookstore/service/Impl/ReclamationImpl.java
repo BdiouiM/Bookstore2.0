@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import bookstore.entities.Reclamation;
 import bookstore.entities.StatutReclamation;
@@ -18,6 +19,7 @@ import bookstore.repository.ReclamationRepository;
 import bookstore.service.ReclamationAdminService;
 import bookstore.service.ReclamationClientService;
 
+@Service
 public class ReclamationImpl implements ReclamationAdminService,ReclamationClientService{
 	@Autowired
 	ReclamationRepository reclamationRepository;
