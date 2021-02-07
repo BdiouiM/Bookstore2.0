@@ -40,6 +40,8 @@ public class User  implements Serializable{
     private String email;
 	@Column(name="C_CIN")
     private int CIN;
+	@Column(name="C_Active")
+    private int active;
     @Enumerated(EnumType.STRING)
     private RoleUser role;
     
@@ -85,6 +87,17 @@ public class User  implements Serializable{
 		this.role = role;
 		this.password=password;
 	}
+	public User(User u) {
+		this.email=u.getEmail();
+		this.username=u.getUsername();
+		this.password=u.getPassword();
+		this.active=u.getActive();
+		this.role=u.getRole();
+		this.nom=u.getNom();
+		this.prenom=u.getPrenom();
+		this.id=u.getId();
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -145,6 +158,23 @@ public class User  implements Serializable{
 	public void setRole(RoleUser role) {
 		this.role = role;
 	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public int getActive() {
+		return active;
+	}
+
+	public void setActive(int active) {
+		this.active = active;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
