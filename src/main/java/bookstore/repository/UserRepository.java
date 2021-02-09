@@ -31,10 +31,6 @@ public interface UserRepository extends CrudRepository<User, Long>{
 	@Query("SELECT u FROM User u WHERE u.username= :username")
 	public User Auth(@Param("username") String username);
 	
-<<<<<<< HEAD
-=======
-	
->>>>>>> develop
 	@Query("SELECT u.id FROM User u WHERE u.username= :username")
 	long SelectByid(@Param("username") String username);
 	

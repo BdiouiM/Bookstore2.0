@@ -3,7 +3,6 @@ package bookstore.service.Impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-<<<<<<< HEAD
 import java.util.Set;
 
 import java.util.function.Consumer;
@@ -12,7 +11,6 @@ import java.util.stream.Collectors;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.stream.Collectors;
-=======
 import java.util.Properties;
 import java.util.Random;
 
@@ -30,7 +28,6 @@ import javax.mail.internet.MimeMultipart;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
->>>>>>> develop
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -43,19 +40,13 @@ import bookstore.entities.Reclamation;
 import bookstore.entities.StatutReclamation;
 import bookstore.entities.TypeReclamation;
 import bookstore.entities.User;
-<<<<<<< HEAD
-=======
 import bookstore.entities.Verification_Code;
->>>>>>> develop
 import bookstore.exception.ReclamationException;
 import bookstore.exception.StockException;
 import bookstore.repository.ReclamationRepository;
 import bookstore.repository.StockRepository;
 import bookstore.repository.UserRepository;
-<<<<<<< HEAD
-=======
 import bookstore.repository.VerificationCodeRepository;
->>>>>>> develop
 import bookstore.service.ReclamationAdminService;
 import bookstore.service.ReclamationClientService;
 import bookstore.service.StockService;
@@ -67,29 +58,19 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	UserRepository userRepository;
-<<<<<<< HEAD
 	private static final Logger L = LogManager.getLogger(UserServiceImpl.class);
-=======
 	VerificationCodeRepository vcRepo;
 	Verification_Code Vc=new Verification_Code();
 	BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 	public static int  coderest=0;
 	public static int  idverif=0;
-	private static final Logger L=LogManager.getLogger(UserServiceImpl.class);
 	// GESTION User -MOHAMED BDIOUI-
-
->>>>>>> develop
 	@Override
 	public User findByUsernameOrEmail(String usernameOrEmail) {
 		// TODO Auto-generated method stub
 		return null;
-<<<<<<< HEAD
 	}
-
 	
-}
-=======
-	}
 	//add user
 		public User addCustomer(User u){
 		    return userRepository.save(u);
@@ -240,4 +221,3 @@ public class UserServiceImpl implements UserService {
 				
 			}
 	}
->>>>>>> develop

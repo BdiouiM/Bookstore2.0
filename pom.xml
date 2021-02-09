@@ -36,8 +36,6 @@
 		</dependency>
 		
 		<dependency>
-<<<<<<< HEAD
-=======
 	<groupId>io.jsonwebtoken</groupId>
 	<artifactId>jjwt</artifactId>
 	<version>0.9.1</version>
@@ -49,7 +47,6 @@
 		</dependency>
 
 		<dependency>
->>>>>>> develop
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
@@ -61,14 +58,12 @@
   </dependency>
   
 		<dependency>
-<<<<<<< HEAD
    			 <groupId>junit</groupId>
     		<artifactId>junit</artifactId>
     		<version>4.12</version>
     		<scope>test</scope>
   		</dependency>
-  		
-=======
+  		<dependency>
          <groupId>com.stripe</groupId>
          <artifactId>stripe-java</artifactId>
          <version>1.1.16</version>
@@ -102,7 +97,6 @@
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 
->>>>>>> develop
 	</dependencies>
 
 	<build>

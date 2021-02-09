@@ -31,10 +31,7 @@ public class ReclamationController {
 	
 	@Autowired
     private ReclamationImpl reclamationService;
-<<<<<<< HEAD
-=======
-	
->>>>>>> develop
+
 	@GetMapping("/reclamation-welcome")
 	public String start(){return "Weclome to reclamation";}
 	// RECLAMATION CLIENT
@@ -74,11 +71,7 @@ public class ReclamationController {
 			@PathVariable("user-desc") String  description,
 			@PathVariable("user-type") TypeReclamation  type){
 		try {
-<<<<<<< HEAD
-			reclamationService.modifierReclamation(r, date, description, type);
-=======
 			reclamationService.modifierReclamation(r, new Date(), description, type);
->>>>>>> develop
 	            return  new ResponseEntity("reclamation modifiée", HttpStatus.OK);
 		} catch (ReclamationException e) {
 			e.printStackTrace();
