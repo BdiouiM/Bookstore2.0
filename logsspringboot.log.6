@@ -1,4 +1,23 @@
-[2021-02-07 17:09:43.797] - 1212 INFOS [restartedMain] --- org.apache.catalina.core.StandardService: Starting service [Tomcat]
-[2021-02-07 17:09:43.800] - 1212 INFOS [restartedMain] --- org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.41]
-[2021-02-07 17:09:43.970] - 1212 INFOS [restartedMain] --- org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/SpringMVC]: Initializing Spring embedded WebApplicationContext
-[2021-02-07 17:09:46.616] - 1212 INFOS [restartedMain] --- org.apache.catalina.core.StandardService: Stopping service [Tomcat]
+[2021-02-07 21:43:43.578] - 13216 INFOS [restartedMain] --- org.apache.catalina.core.StandardService: Starting service [Tomcat]
+[2021-02-07 21:43:43.580] - 13216 INFOS [restartedMain] --- org.apache.catalina.core.StandardEngine: Starting Servlet engine: [Apache Tomcat/9.0.41]
+[2021-02-07 21:43:43.844] - 13216 INFOS [restartedMain] --- org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/SpringMVC]: Initializing Spring embedded WebApplicationContext
+[2021-02-07 21:43:46.574] - 13216 INFOS [restartedMain] --- org.apache.catalina.core.StandardService: Stopping service [Tomcat]
+[2021-02-07 21:43:46.603] - 13216 AVERTISSEMENT [restartedMain] --- org.apache.catalina.loader.WebappClassLoaderBase: The web application [SpringMVC] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1067)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+ java.lang.Thread.run(Thread.java:745)
+[2021-02-07 21:43:46.606] - 13216 AVERTISSEMENT [restartedMain] --- org.apache.catalina.loader.WebappClassLoaderBase: The web application [SpringMVC] appears to have started a thread named [HikariPool-1 connection adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1066)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1127)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+ java.lang.Thread.run(Thread.java:745)

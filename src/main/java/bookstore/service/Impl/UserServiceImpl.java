@@ -201,6 +201,7 @@ public class UserServiceImpl implements UserService {
 					AddCode(verification_code,u );
 				}
 			}
+			
 			//******************************************************************
 			@Override
 			public User GetUser(int id) {
