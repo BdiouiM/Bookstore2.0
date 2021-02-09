@@ -16,12 +16,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.SpringRunner;
 import com.sun.el.parser.ParseException;
+
+import bookstore.entities.GenreLivre;
 import bookstore.entities.Livre;
 import bookstore.entities.Reclamation;
 import bookstore.entities.TypeReclamation;
 import bookstore.entities.User;
+import bookstore.exception.LivreException;
 import bookstore.exception.ReclamationException;
 import bookstore.exception.StockException;
+import bookstore.service.LivreAdminService;
+import bookstore.service.LivreClientService;
 import bookstore.service.ReclamationAdminService;
 import bookstore.service.ReclamationClientService;
 import bookstore.service.StockService;
@@ -30,13 +35,16 @@ import bookstore.service.Impl.UserServiceImpl;
 @SpringBootTest
 public class BookstoreApplicationTests {
 	@Autowired
+	LivreAdminService livreAdminService;
+	@Autowired
+	LivreClientService clientAdminService;
+	@Autowired
 	ReclamationAdminService reclamationAdminService;
 	@Autowired
 	ReclamationClientService reclamationClientService;
 	@Autowired
 	StockService stockService;
 	//private static final Logger L = (Logger) LogManager.getLogger(BookstoreApplicationTests.class);    
-    // TEST ADMIN RECLAMATION -MOHAMED BDIOUI-
 	@Test
 	public void testfindAll() {
     	reclamationAdminService.findAll();
@@ -182,4 +190,71 @@ public class BookstoreApplicationTests {
     	List<Livre> livres=stockService.ListerLivres();
     	stockService.AfficherLivres(livres);
     }
+    
+    
+ // TEST ADMIN LIVRE -MOHAMED HEDI BEN ATIG-
+ 		@Test
+ 		public void test1findAll() {
+ 	    	livreAdminService.findAll();
+ 	    }
+ 	   
+ 	    @Test
+ 		public void test1ListLivres() throws ParseException {
+ 	    	livreAdminService.ListLivres();
+ 	    }
+ 	    @Test
+ 	   	public void testAjouterLivre() throws ParseException {
+ 	    	Livre L=new Livre();
+ 	    	try {
+ 				livreAdminService.ajouterLivre(L);
+ 			} catch (LivreException e) {
+ 				e.printStackTrace();
+ 				//((org.apache.logging.log4j.Logger) L).debug("error envoyer livre");
+ 			}
+ 	    }
+ 		
+ 	    @Test
+ 		public void testAfficherlivres() throws ParseException {
+ 	    	List<Livre> L=new ArrayList<Livre>();
+ 	    	L=livreAdminService.ListLivres();
+ 	    	livreAdminService.AfficherLivre(L);
+ 	    }
+ 	   /* @Test
+ 	   	public void testAfficherlivre() throws ParseException {
+ 	       	Livre L=new Livre();
+ 	       	try {
+ 				Set<Livre> s =livreAdminService.afficherLivre(L);;
+ 				Set<Livre> expected = new HashSet<Livre>();
+ 				Assert.assertEquals(expected,s);
+ 			} catch (LivreException e) {
+ 				e.printStackTrace();
+ 				//((org.apache.logging.log4j.Logger) L).debug("error afficher livre");
+ 			}
+ 	       }*/
+ 	    @Test
+ 	   	public void testExistelivre() throws ParseException {
+ 	    	Livre L= new Livre();
+ 	    	livreAdminService.existeLivre(L);
+ 	    }
+
+ 	    
+ 	    @Test
+ 	   	public void testModifierlivre() throws ParseException {
+ 	    	Livre L=new Livre();
+ 	    	L.setTitre("test");
+ 	    	L.setAuteur("auteur test");
+ 	    	L.setNbrPages(1);
+ 	    	L.setPrix(1);
+ 	    	L.setGenre(GenreLivre.ADVENTURE);
+ 	    	try {
+ 				livreAdminService.modifierLivre(L, L.getAuteur(),L.getGenre(), L.getNbrPages(), L.getPrix(), L.getTitre());
+ 			} catch (LivreException e) {
+ 				e.printStackTrace();
+ 			}
+ 	    }
+ 	   
+
+
+
+    
 }

@@ -55,6 +55,7 @@ public class ReclamationController {
 	public ResponseEntity<String> annulerReclamation(@RequestBody Reclamation r){
 		try {
 			reclamationService.annulerReclamationsClient(r);
+		
 	            return  new ResponseEntity("reclamation annulée", HttpStatus.OK);
 		} catch (ReclamationException e) {
 			e.printStackTrace();
