@@ -18,10 +18,7 @@ import bookstore.exception.ReclamationException;
 import bookstore.repository.ReclamationRepository;
 import bookstore.service.ReclamationAdminService;
 import bookstore.service.ReclamationClientService;
-<<<<<<< HEAD
-=======
 
->>>>>>> develop
 @Service
 public class ReclamationImpl implements ReclamationAdminService,ReclamationClientService{
 	@Autowired
