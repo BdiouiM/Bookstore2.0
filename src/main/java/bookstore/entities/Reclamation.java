@@ -46,6 +46,7 @@ public class Reclamation implements Serializable{
 		Description = description;
 		ClientUsername = clientUsername;
 		this.utilisateur = utilisateur;
+		System.out.println("done!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}
 	public Reclamation() {
 	}

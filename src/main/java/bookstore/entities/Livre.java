@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
+//tayko
 @Entity
 @Table(name = "T_livre")
 public class Livre implements Serializable {
@@ -139,6 +139,9 @@ public class Livre implements Serializable {
 		return "Livre [id=" + id + ", titre=" + titre + ", auteur=" + auteur + ", nbrPages=" + nbrPages + ", prix="
 				+ prix + ", genre=" + genre + "]";
 	}
+	
+	
+
 	 
 	 
 }

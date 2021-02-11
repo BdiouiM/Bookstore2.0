@@ -17,7 +17,7 @@ import bookstore.entities.GenreLivre;
 import bookstore.entities.Livre;
 import bookstore.exception.LivreException;
 import bookstore.service.Impl.LivreImpl;
-
+//tayko
 @RequestMapping("/livre")
 @RestController
 public class LivreController {
@@ -68,10 +68,10 @@ public class LivreController {
 	//supprimer livre
 		@DeleteMapping("/livre-delete")
 		@ResponseBody
-		public ResponseEntity<String> supprimerLivre(@RequestBody Livre L){
+		public ResponseEntity<String> supprimerLivre(@RequestBody Long id){
 			
 				try {
-					livreService.supprimerLivre(L);
+					livreService.supprimerLivre(id);
 		            return  new ResponseEntity("livre supprimé", HttpStatus.OK);
 
 				} catch (LivreException e) {

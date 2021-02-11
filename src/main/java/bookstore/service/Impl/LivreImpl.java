@@ -47,22 +47,28 @@ public class LivreImpl implements LivreAdminService,LivreClientService{
 				 }
 		}
 		@Override
-		public void supprimerLivre(Livre L) throws LivreException {
-			// TODO Auto-generated method stub
-		}
+		public void supprimerLivre(Long id) throws LivreException {
+							
+				livreRepository.supprimerLivre(id);
+				System.out.println("leeeeee!");
+			
+				}
 		@Override
-		public void modifierLivre(Livre L, String c_auteur, GenreLivre genre, int c_nbr_pages, float c_prix, String c_titre) throws LivreException {
+		public void modifierLivre(Livre L, String c_auteur, GenreLivre c_genre, int c_nbr_pages, float c_prix, String c_titre) throws LivreException {
 			if(!existeLivre(L))
 				throw (new LivreException("Le livre n'existe pas"));
 			else
 			{
+				System.out.println("le livre existe!");
 				long idL=L.getId();
 				L.setAuteur(c_auteur);
-				L.setGenre(genre);;
+				L.setGenre(c_genre);;
 				L.setNbrPages(c_nbr_pages);
 				L.setPrix(c_prix);
 				L.setTitre(c_titre);
-				L=livreRepository.modifierLivre(idL, L.getAuteur(),L.getGenre(), L.getNbrPages(),L.getPrix(),L.getTitre());
+
+				livreRepository.modifierLivre(idL, L.getAuteur(), L.getGenre(), L.getNbrPages(), L.getPrix(), L.getTitre());
+				System.out.println("leeeeee!");
 				livreRepository.save(L);
 			}
 		}
