@@ -1,6 +1,8 @@
 package com.example.demo.Services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -24,13 +26,26 @@ public class AdministrateurServiceImplementation implements EchangeAdministrateu
 	public Echange getEchangeById(int id) {
 		return adminRepository.findById(id).get();
 	}
-
-	public void updateStatutEchange(int id, String statutechange) {
-		adminRepository.updateStatutEchang(id, statutechange);
+	
+	@Override
+	public Integer deleteEchangeById(int id) {
+		int resultat = 0;
+		System.out.println();
+		int idClientEchange = adminRepository.findById(id).get().getClientechange();				
+		int DeleteEchange = adminRepository.deleteechange(id);
+		int DeleteClientEchange = adminRepository.deleteClientechange(idClientEchange);
+		if((DeleteEchange>0)&&(DeleteClientEchange>0)){
+			resultat =1;
+		}else{
+			resultat =0;
+		}
+		return resultat ;
 	}
 
-	public void deleteEchangeById(int id) {
-		adminRepository.deleteById(id);
+	@Override
+	public Integer updatestatut(int id, int clientechange) {
+		// TODO Auto-generated method stub
+		return adminRepository.updatestatute(id, clientechange);
 	}
 
 }

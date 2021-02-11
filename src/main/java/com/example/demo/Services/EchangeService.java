@@ -1,13 +1,16 @@
 package com.example.demo.Services;
 
+import java.util.List;
 import com.example.demo.Entities.Clientechange;
-import com.example.demo.Entities.Echange;
+
 
 public interface EchangeService {
 	
-    public void  ajoutEchange(Clientechange CE);
-    public void updateTitre1Echange(int id,int client1,String titre1);
-    public void updateTitre2Echange(int id,int client2,String titre2);
-    public void updateClient1Confirmation(int id,int client2,String cliet1confirmation);
+    public boolean ajoutEchange(Clientechange CE);
+    public Integer updateTitre1Echange(int id,int client1,String titre1);
+    public Integer updateClient1Confirmation(int id,int client1,String client1confirmation);
+    public Integer updateClientEchange(int id,int client2,String titre2);
+    public Integer AnnulerClientEchange(int id);  
+    public List<Clientechange>getAllEchangeByCIN(int client1);
     
 }

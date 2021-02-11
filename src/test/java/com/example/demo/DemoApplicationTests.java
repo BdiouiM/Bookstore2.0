@@ -1,49 +1,58 @@
-/*package com.example.demo;
-
-//import com.example.demo.Controllers.EchangeController;
-import com.example.demo.Entities.Clientechange;
-import com.example.demo.Entities.Echange;
-import org.junit.jupiter.api.Test;
+package com.example.demo;
+import static org.junit.Assert.*;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import static org.junit.jupiter.api.Assertions.*;
+import org.springframework.test.context.junit4.SpringRunner;
+import com.example.demo.Controllers.EchangeController;
+import com.example.demo.Entities.Clientechange;
 
 
+
+@RunWith(SpringRunner.class)
 @SpringBootTest
-class DemoApplicationTests {
+public class DemoApplicationTests  {
 
     @Autowired
     private EchangeController EC ;
+    
     @Test
-    void addEchange() {
-        // ma7atitch Client 2 w titre 2 5ater athoukom bch ykamlou echange ba3ed so fl base normalement tal9ahom NULL
-
-        Clientechange Ce = new Clientechange();
-        Ce.setId(11);  // you have an autoincrement ID so u don't need to set it
-        Ce.setClient1(1);
-        Ce.setClient1Confirmation("Waiting");
-        Ce.setTitre1("Hacker");
-        Echange E = new Echange();
-        E.setId(1); // you have an autoincrement ID so u don't need to set it
-        E.setClientechange(11);
-        E.setStatutechange("Waiting");
-        assertEquals(true,EC.ajoutEchange(E,Ce));
-    }
-    @Test
-    void annulerEchange() {
-        // ma7atitch Client 2 w titre 2 5ater athoukom bch ykamlou echange ba3ed so fl base normalement tal9ahom NULL
-
-        Clientechange Ce = new Clientechange();
-        Ce.setId(11);  // you have an autoincrement ID so u don't need to set it
-        Ce.setClient1(1);
-        Ce.setClient1Confirmation("Waiting");
-        Ce.setTitre1("waiting");
-        Echange E = new Echange();
-        E.setId(1); // you have an autoincrement ID so u don't need to set it
-        E.setClientechange(11);
-        E.setStatutechange("Waiting");
-        assertEquals(true,EC.ajoutEchange(E,Ce));
-    }
-
-
-}*/
+    public void addUserCorrectForm() {
+    	Clientechange U=new Clientechange();
+    	U.setClient1(2);
+    	U.setTitre1("Le Petit Prince");
+    	assertTrue(EC.ajoutechangeClient(U));
+	}
+   @Test
+ public void updateTitre1CorrectForm(){
+	   
+	   assertTrue(EC.updateTitre1(13, "Hello", 2));
+ }
+   @Test
+   public void updateClient1ConfirmationCorrectForm(){
+	   int id = 18 ; 
+	   int clientid = 2 ;
+	   assertTrue(EC.updateClientconfirmation(id, clientid));
+   }
+   
+   @Test
+   public void updateClient2CorrectForm(){
+	   assertTrue(EC.updateClientEchange(4, "AhmedDridi", 2));
+   }
+   @Test
+   public void annulerechangeCorrectForm(){
+	   assertTrue(EC.annulerClientEchange(4));
+   }
+   @Test
+   public void deleteEchangeAdmin(){
+	   int tmp = EC.deleteEchangeA(11);
+	   assertEquals(1, tmp);
+   }
+  
+   @Test
+   public void updateStatutAdminCorrectForm(){
+	   assertTrue(EC.updatestatutAdmin(1,1));
+   }
+   
+}

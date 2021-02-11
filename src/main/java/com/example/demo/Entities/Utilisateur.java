@@ -1,11 +1,16 @@
 package com.example.demo.Entities;
 
-import org.springframework.data.relational.core.sql.In;
+
+
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
+@Table(name="utilisateur")
 public class Utilisateur {
     private Integer id;
     private String email;
@@ -78,6 +83,8 @@ public class Utilisateur {
         return result;
     }
 
+    @JsonManagedReference(value="c1")
+  
     @OneToMany(mappedBy = "utilisateurByClient1")
     public Collection<Clientechange> getClientechangesById() {
         return clientechangesById;
@@ -86,7 +93,8 @@ public class Utilisateur {
     public void setClientechangesById(Collection<Clientechange> clientechangesById) {
         this.clientechangesById = clientechangesById;
     }
-
+ 
+    @JsonManagedReference(value="c2")
     @OneToMany(mappedBy = "utilisateurByClient2")
     public Collection<Clientechange> getClientechangesById_0() {
         return clientechangesById_0;

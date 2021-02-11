@@ -2,7 +2,14 @@ package com.example.demo.Entities;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 @Entity
+@Table(name="echange")
 public class Echange {
     private Integer id;
     private String statutechange;
@@ -10,6 +17,7 @@ public class Echange {
     private Clientechange clientechangeByClientechange;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     public Integer getId() {
         return id;
@@ -61,8 +69,9 @@ public class Echange {
         result = 31 * result + clientechange;
         return result;
     }
-
-    @ManyToOne
+    
+    @JsonBackReference(value = "clientechangeByClientechange")
+    @OneToOne(fetch = FetchType.LAZY)
     @MapsId("id")
     @JoinColumn(name = "clientechange", referencedColumnName = "id", nullable = false)
     public Clientechange getClientechangeByClientechange() {

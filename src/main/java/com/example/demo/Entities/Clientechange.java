@@ -1,9 +1,17 @@
 package com.example.demo.Entities;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import java.util.Collection;
 
 @Entity
+@Table(name="clientechange")
 public class Clientechange {
     private int id;
     private Integer client1;
@@ -11,20 +19,23 @@ public class Clientechange {
     private String client1Confirmation;
     private Utilisateur utilisateurByClient1;
     private Utilisateur utilisateurByClient2;
-    private Collection<Echange> echangesById;
+    private Echange echangesById;
     private String titre1;
     private String titre2;
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id",insertable = true,updatable = true,nullable = true)
     public int getId() {
         return id;
     }
 
+   
     public void setId(int id) {
         this.id = id;
     }
-
+    public Clientechange(){}
+    
     @Basic
     @Column(name = "client1",updatable = true,insertable = true)
     public Integer getClient1() {
@@ -55,6 +66,7 @@ public class Clientechange {
         this.client1Confirmation = client1Confirmation;
     }
 
+   
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -79,7 +91,8 @@ public class Clientechange {
         result = 31 * result + (client1Confirmation != null ? client1Confirmation.hashCode() : 0);
         return result;
     }
-
+    
+    @JsonBackReference(value="c1")
     @ManyToOne
     @MapsId("id")
     @JoinColumn(name = "client1", referencedColumnName = "id", nullable = false)
@@ -90,7 +103,8 @@ public class Clientechange {
     public void setUtilisateurByClient1(Utilisateur utilisateurByClient1) {
         this.utilisateurByClient1 = utilisateurByClient1;
     }
-
+    
+    @JsonBackReference(value="c2")
     @ManyToOne
     @MapsId("id")
     @JoinColumn(name = "client2", referencedColumnName = "id", nullable = true)
@@ -102,17 +116,18 @@ public class Clientechange {
         this.utilisateurByClient2 = utilisateurByClient2;
     }
 
-    @OneToMany(mappedBy = "clientechangeByClientechange")
-    public Collection<Echange> getEchangesById() {
+    @JsonManagedReference(value = "clientechangeByClientechange")
+    @OneToOne(mappedBy = "clientechangeByClientechange")
+    public Echange getEchangesById() {
         return echangesById;
     }
 
-    public void setEchangesById(Collection<Echange> echangesById) {
+    public void setEchangesById(Echange echangesById) {
         this.echangesById = echangesById;
     }
 
     @Basic
-    @Column(name = "titre1")
+    @Column(name = "titre1",nullable=false)
     public String getTitre1() {
         return titre1;
     }
