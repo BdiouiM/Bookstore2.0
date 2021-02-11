@@ -15,7 +15,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table( name = "PERSONNEL")
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
 public class Personnel extends User implements Serializable{
 	/**
 	 * 

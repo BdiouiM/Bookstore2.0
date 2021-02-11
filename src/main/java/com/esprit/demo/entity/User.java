@@ -13,7 +13,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
-//autoriser au autre class à heriter user
+//autoriser au autres class à heriter user
 @MappedSuperclass
 public abstract class User implements Serializable{
 	private static final long serialVersionUID = 675448607963296437L;
